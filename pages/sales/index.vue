@@ -17,14 +17,13 @@
                     <div class="ui one column stackable grid">
                         <div class="column">
                             <div class="ui tabular menu">
-                                <a v-for="s of cur_menu.submenus" class="item" :data-id="s.id" @click="submenu=s.id" 
-                                 :class="{'active':s.active}">{{s.name}}
-                                </a>
+                                <a v-for="s of cur_menu.submenus" class="item" :data-id="s.id" @click="submenu=s.id"  :class="{'active':s.active}">
+                                {{s.name}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <component :is="submenu"> </component>    
+                <component :is="submenu" > </component>    
             </div>
         </div>
     </div>
@@ -36,7 +35,7 @@
 <script>
 
  
-import ReptWKY from '~/components/ReptWKY'
+import ReptXSBM from '~/components/ReptXSBM'
 import Menu from '~/components/Menu'
 import Form from '~/components/Form'
 import { mapMutations } from 'vuex'
@@ -63,16 +62,19 @@ export default {
   },
   data () {
     return {
-     submenu:"ReptWKY"
+      submenu:'ReptXSBM'
     }
   },
   components: {
-    ReptWKY,
+    ReptXSBM,
     Menu,
     Form
   },
   
   methods: {
+    test(){
+       //alert(JSON.stringify(this.cur_menu))
+    },
     ...mapMutations([
       "tester"
       ]),
@@ -101,8 +103,9 @@ export default {
 </script>
 
 <style scoped>
-    .ui.container{
-       width:90%!important;
+
+   .ui.container{
+       width:85%!important;
    }
   
   @media screen and (max-width:767px){
@@ -110,5 +113,6 @@ export default {
       margin-top: 8%;
     }
   }
+
  
 </style>

@@ -4,9 +4,14 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
         bgColor:['#33CCCC','#5160AC'],
-        menu:"进度统计",
+        cur_menu:{id:"home",name:"培训进度统计",submenus:[{name:"未开业中心培训作业进度",id:"ReptWKY",active:true},{name:"其它统计",id:"ReptWKY",active:false}]},
+        menu:[
+          {id:"home",name:"培训进度统计",submenus:[{name:"未开业中心培训作业进度",id:"ReptWKY",active:true},{name:"其它统计",id:"ReptWKY",active:false}]},
+          {id:"sales",name:"销售培训统计",submenus:[{name:"销售专项培训报名统计",id:"ReptXSBM",active:true},{name:"其它统计",id:"ReptXSBM",active:false}]}
+        ],
         counter: parseInt(Math.random()*10000),
-        login:{user:"training",pwd:"Tlgc@1103",auth:false}
+        cur_user:{},
+        login:[{user:"training",pwd:"Tlgc@1103",auth:false},{user:"sales",pwd:"Tlgc@1103",auth:false}]
     },
     getters:{
       
@@ -20,11 +25,16 @@ const createStore = () => {
         }
       },
       menuChange(state,m){
-        state.menu = m;
+        state.cur_menu = m;
         //console.log(m);
       },
       auth(state){
-        state.login.auth=true;
+         state.login.forEach((login) =>{
+          //console.log(login.auth)
+          if(login.auth) {
+            state.cur_user = login;
+          }
+        })
       }
     },
     actions: {

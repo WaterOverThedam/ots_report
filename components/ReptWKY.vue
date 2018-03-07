@@ -33,7 +33,7 @@
             </div>
             <div class="column left aligned">
                 <div>
-                    <a id="query" href="#" class="ui primary button" @click="getUserGrade()">搜索</a>
+                    <a id="query" href="javascript:" class="ui primary button" @click="getUserGrade()">搜索</a>
                 </div>
             </div>
         </div>

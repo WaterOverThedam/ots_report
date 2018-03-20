@@ -4,23 +4,21 @@
         <div class="ui four column stackable grid">
             <div class="column left aligned">
                 <div class="block">
-                    <span class="demonstration">开始日期&nbsp;</span>
                     <el-date-picker
                     v-model="value1"
                     type="date"
-                    placeholder="选择日期"
+                    placeholder="开始日期"
                     :picker-options="pickerOptions1">
                     </el-date-picker>
                 </div>
             </div>
             <div class="column left aligned">
                 <div class="block">
-                    <span class="demonstration">结束日期&nbsp;</span>
                     <el-date-picker
                     v-model="value2"
                     align="right"
                     type="date"
-                    placeholder="选择日期"
+                    placeholder="结束日期"
                     :picker-options="pickerOptions1">
                     </el-date-picker>
                 </div>

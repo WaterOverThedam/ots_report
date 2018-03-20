@@ -39,6 +39,7 @@ module.exports = {
     link: [
         { rel:'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel:'stylesheet',type:'text/css',href:'http://tlgc.oss-cn-shanghai.aliyuncs.com/assert/ui/semantic/semantic.min.css'},
+        { rel:'stylesheet',type:'text/css',href:'https://unpkg.com/element-ui/lib/theme-chalk/index.css'},
     ],
     script: [
         {src: 'http://tlgc.oss-cn-shanghai.aliyuncs.com/assert/ui/semantic/jquery-1.11.3.min.js'},
@@ -47,7 +48,7 @@ module.exports = {
   },
   //共用css
   css:[
-       '~/assets/css/normalize.css',
+       '~/assets/css/normalize.css'
   ],
   /*
   ** Customize the progress bar color
